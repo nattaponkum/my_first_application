@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; // Import ไลบรารี Material ของ Flutter
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   // จุดเริ่มต้นของแอป Flutter
@@ -35,35 +36,31 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Home Page'),
         backgroundColor: Colors.blue, // ปรับแต่งสี AppBar
       ),
-      body: Center(
-        // พื้นที่เนื้อหาหลัก
-        child: Container(
-          padding: EdgeInsets.all(10.0),
-          width: 300.0,
-          height: 150.0,
-          decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.horizontal(
-              left: Radius.circular(10.0),
-              right: Radius.elliptical(50.0, 10),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            'Item 1',
+            style: TextStyle(
+              fontFamily: 'BitCountGridSingle',
+              fontSize: 50.0,
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          child: Center(
-            child: Image.asset(
-              'assets/images/A-Cat.jpg',
-              width: 150,
-              // height: 100, // สามารถละเว้นมิติหนึ่งเพื่อรักษาอัตราส่วนภาพ
-              fit: BoxFit.contain, // ปรับขนาดให้พอดีภายในกล่องโดยไม่ตัดภาพ
+          const SizedBox(height: 20.0), // สร้างพื้นที่ว่างแนวตั้ง 20 พิกเซล
+          Text(
+            'Item 2',
+            style: GoogleFonts.lato(
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+              fontStyle: FontStyle.italic,
+              color: Colors.blue,
             ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // การกระทำที่จะทำเมื่อกดปุ่ม
-          print('FAB Pressed!');
-        },
-        child: const Icon(Icons.add), // ไอคอนสำหรับปุ่ม
+          const SizedBox(height: 20.0), // ช่องว่างอีก 20 พิกเซล
+          const Text('Item 3'),
+        ],
       ),
     );
   }
